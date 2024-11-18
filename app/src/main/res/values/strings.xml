@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Task Organizer</string>
+    <string-array name="priority_options">
+        <item>High</item>
+        <item>Low</item>
+    </string-array>
+</resources>

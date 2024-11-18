@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Title TextView for Task Organizer -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Organizer"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+
+    <!-- Expandable ListView to show tasks grouped by priority -->
+    <android.widget.ExpandableListView
+        android:id="@+id/expandableListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:layout_below="@id/titleTextView"
+        android:layout_above="@id/addTaskButton" />
+
+    <!-- Task Item Layout (Integrated inside the same file) -->
+    <LinearLayout
+        android:id="@+id/taskItemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"> <!-- This layout will be dynamically inflated for tasks -->
+
+        <!-- Task Title -->
+        <TextView
+            android:id="@+id/taskTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Task Title"
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <!-- Remove Button -->
+        <ImageButton
+            android:id="@+id/removeTaskButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_delete"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            app:tint="#420A0A"
+            android:visibility="gone"
+        android:contentDescription="Remove Task" />
+    </LinearLayout>
+
+    <!-- Floating "+" Button for Adding Task -->
+    <ImageButton
+        android:id="@+id/addTaskButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@android:drawable/ic_input_add"
+        android:background="@drawable/circular_background"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
+    android:layout_margin="16dp"
+    android:contentDescription="Add Task"
+    android:elevation="8dp" />
+
+</RelativeLayout>
